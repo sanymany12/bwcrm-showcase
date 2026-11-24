@@ -1,6 +1,6 @@
 # BW CRM
 
-It's also my main learning project. I started it being experienced in Java but not how production Spring applications are usually structured,
+My main learning project. I started it being experienced in Java but not how production Spring applications are usually structured,
 and I use it to learn that on a real problem instead of a tutorial. I wanted to stick to Java and focus mainly on the backend, so I choose the Vaadin architecture wich allows for a faster workflow.
 
 > [!NOTE]
