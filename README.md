@@ -13,11 +13,11 @@ It's also my main learning project. I started it with solid Java experience but 
 
 - Companies and contacts with validation (tax number, email, phone), search and archiving
 - Sales pipeline with deals and a service tier catalog
-- Audit log that records every change: who changed what, and when
+- Key events go into a separate append-only audit log
 - Server-side UI with Vaadin components and data binding
 - Authentication and role-based access with Spring Security
 - Versioned database migrations and central error handling
-- Docker Compose dev environment and CI that runs the tests on every push
+- Docker Compose dev environment and CI that runs the full test suite on every pull request and every push to main.
 
 ## Deployment
 
@@ -62,19 +62,19 @@ I learned how to set up a VPS on Oracle Cloud, create storage buckets for backup
 | Area | Technologies |
 |---|---|
 | Language | Java 21 |
-| Framework | Spring Boot 4.1.1: Web, Data JPA, Security, Validation, Vaadin |
+| Framework | Spring Boot 4.1.1: Web, Data JPA, Security, Validation,|
 | Database | PostgreSQL 17, Flyway migrations |
 | Build | Maven |
 | Testing | JUnit 5, Mockito, Testcontainers |
 | Tooling | Docker Compose, GitHub Actions |
-| Frontend | Vaadin Flow components |
+| Frontend | Vaadin 25.3 |
 | Hosting | Oracle Cloud VPS, Caddy, Oracle Object Storage |
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-    Browser[Browser] -->|HTTPS| Caddy[Caddy reverse proxy<br/>crm.bwsolutions.hu]
+    Browser[Browser] -->|HTTPS| Caddy[Caddy reverse proxy]
     Caddy -->|HTTP 127.0.0.1:8080| Security
 
     subgraph App["Spring Boot 4 + Vaadin Flow (app container)"]
@@ -127,6 +127,7 @@ erDiagram
 ## Testing
 
 I unit-test the service layer with Mockito and run integration tests against a real database with Testcontainers. CI runs the full test suite on every push.
+Views are tested with Vaadins browserless-tests.
 
 ## Roadmap
 
