@@ -1,22 +1,5 @@
-<!--
-  BWCRM SHOWCASE – README VÁZ (v2)
-  ------------------------------------------------------------
-  - A HTML-kommentek GitHubon nem látszanak, ezek kitöltési
-    útmutatók. A végén töröld őket.
-  - A [szögletes zárójeles] részeket cseréld ki.
-  - Írd egyes szám első személyben ("I chose…", "I ran into…").
-    A konkrétum és a saját vélemény teszi hitelessé, nem a forma.
-  - Ne kerüljön bele: üzleti titok, ügyféladat, belső URL,
-    API-kulcs, valódi adatokat mutató képernyőkép.
--->
-
 # BW CRM
 
-<!--
-  NYITÁS: a problémával kezdj, ne a stackkel.
-  2–3 mondat: mi volt a gond, miért nem volt jó a meglévő megoldás,
-  és mit csinál most a rendszer.
--->
 It's also my main learning project. I started it being experienced in Java but not how production Spring applications are usually structured,
 and I use it to learn that on a real problem instead of a tutorial. I wanted to stick to Java and focus mainly on the backend, so I choose the Vaadin architecture wich allows for a faster workflow.
 
@@ -27,23 +10,12 @@ and I use it to learn that on a real problem instead of a tutorial. I wanted to 
 
 ## What's in it
  
-<!-- Mit tud a rendszer és mi van benne technikailag. Ne állítsd, hogy te tervezted, ha nem így volt. -->
 - Data binders, and server side front end components with Vaadin
 - Authentication and role-based access with Spring Security
 - Versioned database migrations, central error handling
 - Docker Compose dev environment, CI that runs the tests on every push
 ## How I use AI on this project
  
-<!--
-  Légy konkrét, ne általános. Egy "I use AI responsibly" mondat
-  semmit nem ér, egy valódi példa, ahol elkaptál egy hibát, sokat.
-  Csak azt írd le, ami tényleg igaz a munkafolyamatodra.
--->
-<!--
-  Pontosan úgy írd le, ahogy dolgozol. Itt nem az a cél, hogy
-  kevesebbnek tűnjön az AI szerepe, hanem hogy látsszon, mit
-  tanultál belőle és mennyire érted.
--->
 I build this project with Claude Code, and I use it more like a senior pair programmer than an autocomplete. Since I didn't know the common industry patterns yet, most architectural choices (layering, migrations, security setup) came from its suggestions.
  
 My part:
@@ -55,11 +27,6 @@ My part:
 - 
 ## What I learned
  
-<!--
-  A "Problems I ran into" helyett, mert ez jobban illik egy tanulóprojekthez.
-  2–4 téma. Mindegyiknél: mi a minta, miért ezt javasolta a Claude Code,
-  mit értettél meg belőle, mi lenne az alternatíva. A saját szavaiddal.
--->
 ### spring boot framework
 At first it felt like complete magic. Just writing a method name in the repository and getting a working SQL query. Then I dug deeper, and learned about Hibernate, HikariCP, Spring data JPA, the spring security starter, and it all started to make sense. I still have a lot to learn but the leap in knowledge since I started working this project is huge.
 
@@ -74,7 +41,6 @@ At first it felt like complete magic. Just writing a method name in the reposito
  When changing an entity I also have to change the database, I could use Hibernates auto update, but it is unsafe and doesn't migrate data. Any changes to the database would be untracable. Flyway is a tool similar to git, but for databases. It makes it much easier to keep track of db versions.
 ## Stack
 
-<!-- Csak azt írd, amit tényleg használsz. -->
 | Area | Technologies |
 |---|---|
 | Language | Java 21 |
@@ -105,11 +71,6 @@ flowchart LR
     Repos --> DB[("PostgreSQL 17<br/>(postgres konténer)")]
     DB -.->|napi backup.sh| OOS[(Oracle Object Storage)]
 ```
-<!--
-  Ne tankönyvi leírás legyen: hogyan van szervezve a kód, és miért.
-  A "miért"-et neked kell tudnod megindokolni interjún.
--->
-
 ## Data model (részleges)
  
 ```mermaid
@@ -140,37 +101,19 @@ erDiagram
 
 ## Screenshots
  
-<!-- Csak kitalált adatokkal, seedelt lokális adatbázisból. Képek: docs/screenshots/ -->
-| [Dashboard] | [Client list] |
-|---|---|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Client list](docs/screenshots/clients.png) |
+| Company List | Client list | Pipeline |
+|---|---|---|
+| ![Company List](screenshots/companies.png) | ![Client list](contacts/clients.png) | ![Pipeline](screenshots/pipeline.png) |
  
 ## Testing
  
-<!-- Ne csak felsorold az eszközöket: mit tesztelsz és miért így? -->
-[I unit-test the service layer with Mockito and run integration tests against a real database with Testcontainers, because H2 behaved differently from production on …]
-[CI runs the full test suite on every push.]
+I unit-test the service layer with Mockito and run integration tests against a real database with Testcontainers.
+CI runs the full test suite on every push.
  
 ## What I'd do differently
- 
-<!--
-  2–3 pont. Ebből látszik, hogy reflektálsz a saját munkádra.
-  Pl. "I'd introduce migrations from day one", "I'd write the
-  integration tests earlier".
--->
-- [ … ]
-- [ … ]
-## Roadmap
- 
-- [x] M1 – [project setup, base architecture]
-- [x] M2 – [authentication]
-- [ ] …
-- [ ] M9 – public demo mode with sample data
----
- 
-[Your Name], Computer Science BSc student at ELTE IK, looking for a Java / Spring Boot backend internship.
-[LinkedIn](https://www.linkedin.com/in/[your-profile]) · [you@example.com](mailto:[you@example.com])
----
 
-[Your Name], Computer Science BSc student at ELTE IK, looking for a Java / Spring Boot backend internship.
+- I'd take the leap a bit slower. At first I coded a dummy crm by hand, and underestimated how much more a production grade software actually was. It was very overwhelming at first.
+- Start sooner. This journey has taught me so much and is very exciting, I only wish that I started sooner.
+
+Majer Balázs, Computer Science BSc student at ELTE IK.
 [LinkedIn](https://www.linkedin.com/in/[your-profile]) · [you@example.com](mailto:[you@example.com])
